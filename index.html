@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#172554">
+    <title>Yabut Industry Shoes Company</title>
+
+    <!-- Required Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        /* C2: Reusable palette tokens */
+        @theme {
+            --color-cream: #F8F5EF;
+            --color-ink: #172554;
+            --color-accent: #F97316;
+        }
+
+        /* A5: Reusable component classes */
+        @layer components {
+            .btn-primary {
+                @apply inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 font-semibold text-ink hover:bg-orange-300 focus:outline-2 focus:outline-offset-2 focus:outline-accent;
+            }
+
+            .surface-card {
+                @apply rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800;
+            }
+
+            .form-field {
+                @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-accent focus:ring-2 focus:ring-orange-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:focus:ring-orange-900;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-cream text-slate-700 dark:bg-slate-950 dark:text-slate-200">
+    <!-- Scroll progress bar -->
+    <div id="progressBar" class="fixed left-0 top-0 z-50 h-1 w-full origin-left scale-x-0 bg-accent" aria-hidden="true">
+    </div>
+
+    <!-- Header -->
+    <header class="border-b border-slate-200 bg-cream dark:border-slate-800 dark:bg-slate-950">
+        <nav class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-5 md:flex-row">
+            <a href="#hero" class="brand-intro text-xl font-black tracking-tight text-ink dark:text-white">
+                YABUT industry <span class="text-accent">.</span> SHOES Comnpany
+            </a>
+
+            <ul class="flex flex-wrap items-center justify-center gap-5 text-sm font-semibold md:gap-8">
+                <li>
+                    <a class="nav-link text-slate-700 hover:text-accent dark:text-slate-200 dark:hover:text-orange-300"
+                        href="#about">About</a>
+                </li>
+                <li>
+                    <a class="nav-link text-slate-700 hover:text-accent dark:text-slate-200 dark:hover:text-orange-300"
+                        href="#work">Collection</a>
+                </li>
+                <li>
+                    <a class="nav-link text-slate-700 hover:text-accent dark:text-slate-200 dark:hover:text-orange-300"
+                        href="#contact">Contact</a>
+                </li>
+                <li>
+                    <button id="darkModeToggle" type="button" class="btn-primary">
+                        Toggle Dark Mode
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero: animated by the intro timeline -->
+        <section id="hero" class="overflow-hidden bg-cream px-6 py-20 dark:bg-slate-950 md:py-28 lg:py-36">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
+                <div>
+                    <p class="hero-intro mb-4 font-bold uppercase tracking-[0.25em] text-accent">
+                        Find your next step
+                    </p>
+
+                    <h1
+                        class="hero-intro max-w-2xl text-4xl font-black leading-tight tracking-tight text-ink dark:text-white md:text-6xl lg:text-7xl">
+                        Step into your <span class="text-accent">own style.</span>
+                    </h1>
+
+                    <p class="hero-intro mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+                        Yabut Industry Shoes Company brings together everyday comfort,
+                        modern design, and footwear made for your journey.
+                    </p>
+
+                    <div class="hero-intro mt-8 flex flex-wrap gap-4">
+                        <a href="#work" class="btn-primary">Explore Collection</a>
+                        <button id="replayBtn" type="button"
+                            class="rounded-xl border border-ink px-6 py-3 font-semibold text-ink hover:bg-ink hover:text-white dark:border-slate-500 dark:text-white dark:hover:bg-slate-800">
+                            Replay Intro
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-intro">
+                    <div
+                        class="relative mx-auto flex aspect-square max-w-lg items-center justify-center rounded-[2rem] bg-ink p-8 shadow-xl md:p-12">
+                        <div
+                            class="absolute right-6 top-6 rounded-full bg-accent px-4 py-2 text-sm font-black text-ink">
+                            WALK YOUR WAY
+                        </div>
+
+
+                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRop35kTHx0GKz1kRNnxJEBg1ooEScFzmxP-z6c38I_TMf10Fh4pcfHXvQL&s=10" alt="White everyday sneakers"
+                            class="h-full w-full rounded-xl object-contain" loading="lazy">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about"
+            class="reveal border-y border-slate-200 bg-white px-6 py-20 dark:border-slate-800 dark:bg-slate-900 md:py-24">
+            <div class="mx-auto max-w-4xl text-center">
+                <p class="mb-3 font-bold uppercase tracking-[0.2em] text-accent">Who we are</p>
+                <h2 class="mb-6 text-3xl font-black text-ink dark:text-white md:text-5xl">
+                    Made for every step
+                </h2>
+                <p class="mx-auto max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+                    Yabut Industry Shoes Company is a fictional footwear brand focused on
+                    bringing together comfort, versatility, and personal style. From daily
+                    walks to weekend adventures, our collection helps you move confidently
+                    wherever life takes you.
+                </p>
+            </div>
+        </section>
+
+        <!-- Work / Features -->
+        <section id="work" class="reveal bg-cream px-6 py-20 dark:bg-slate-950 md:py-24">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-12 text-center">
+                   
+                    <p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-300">
+                        Three footwear styles for different moments in your day.
+                    </p>
+                </div>
+                 <!-- Services -->
+        <section id="services" class="reveal bg-cream px-6 py-20 dark:bg-slate-950 md:py-24">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-12 text-center">
+                    <p class="mb-3 font-bold uppercase tracking-[0.2em] text-accent">
+                        What we offer
+                    </p>
+                    <h2 class="text-3xl font-black text-ink dark:text-white md:text-5xl">
+                        Our Services
+                    </h2>
+                    <p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-300">
+                        We make finding and caring for your footwear simple and convenient.
+                    </p>
+                </div>
+
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <article class="surface-card">
+                        <div class="mb-4 text-3xl">👟</div>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">
+                            Shoe Retail and Sales
+                        </h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Explore sneakers, sports shoes, and casual footwear for different activities.
+                        </p>
+                    </article>
+
+                    <article class="surface-card">
+                        <div class="mb-4 text-3xl">📏</div>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">
+                            Size Assistance
+                        </h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Find suitable footwear with our shoe-size guidance and product information.
+                        </p>
+                    </article>
+
+                    <article class="surface-card">
+                        <div class="mb-4 text-3xl">✨</div>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">
+                            Shoe Care
+                        </h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Learn how to clean and maintain your shoes to keep them in good condition.
+                        </p>
+                    </article>
+
+                    <article class="surface-card">
+                        <div class="mb-4 text-3xl">📦</div>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">
+                            Order Inquiries
+                        </h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Ask about product availability, prices, and ordering options.
+                        </p>
+                    </article>
+
+                    <article class="surface-card">
+                        <div class="mb-4 text-3xl">🚚</div>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">
+                            Delivery Options
+                        </h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Contact us to ask about delivery arrangements for your footwear orders.
+                        </p>
+                    </article>
+
+                    <article class="surface-card">
+                        <div class="mb-4 text-3xl">💬</div>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">
+                            Customer Support
+                        </h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Get assistance with sizing, product details, and general questions.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+ <div class="mb-12 text-center">
+                    <p class="mb-3 font-bold uppercase tracking-[0.2em] text-accent">Our collection</p>
+                    <h2 class="text-3xl font-black text-ink dark:text-white md:text-5xl">
+                        Find your fit
+                    </h2>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <article class="surface-card product-card">
+                        <div
+                            class="mb-6 flex aspect-[4/3] items-center justify-center rounded-xl bg-orange-100 dark:bg-slate-700">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRop35kTHx0GKz1kRNnxJEBg1ooEScFzmxP-z6c38I_TMf10Fh4pcfHXvQL&s=10" alt="White everyday sneakers"
+                            class="h-full w-full rounded-xl object-contain" loading="lazy">
+
+                                
+                                <path
+                                    d="M22 116 C75 126 151 117 224 116 L220 130 C216 134 209 135 198 135 L39 135 C22 135 14 127 22 116Z"
+                                    fill="#172554" />
+                                <path d="M97 60 L128 88 M111 54 L140 83 M124 64 L150 89" stroke="#F8F5EF"
+                                    stroke-width="6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-accent">01 · Everyday</p>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">Daily Sneakers</h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Simple, versatile sneakers for school, errands, and everyday activities.
+                        </p>
+                    </article>
+
+                    <article class="surface-card product-card">
+                        <div
+                          class="mb-6 flex aspect-[4/3] items-center justify-center rounded-xl bg-orange-100 dark:bg-slate-700">
+                              <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvsMMdfSn9y-gzUlhYI7kyOg5L3a_GqXLCRWAhjFzlr29G_ROZU1y7rz-C&s=10 alt="White everyday sneakers"
+                            class="h-full w-full rounded-xl object-contain" loading="lazy">
+
+                                <path
+                                    d="M22 96 C55 94 78 79 100 50 L116 39 L136 77 C153 97 179 100 211 106 L224 116 C229 126 220 133 205 133 L42 133 C24 133 15 119 22 96Z"
+                                    fill="#172554" />
+                                <path
+                                    d="M23 116 C75 127 153 118 224 117 L220 130 C215 134 207 135 197 135 L42 135 C24 135 15 127 23 116Z"
+                                    fill="#F97316" />
+                                <path d="M112 56 L139 87 M125 55 L151 87 M137 68 L162 94" stroke="#F8F5EF"
+                                    stroke-width="6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-accent">02 · Active</p>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">Sport Collection</h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Sport-inspired footwear for movement, training, and active weekends.
+                        </p>
+                    </article>
+
+                    <article class="surface-card product-card">
+                        <div
+                            class="mb-6 flex aspect-[4/3] items-center justify-center rounded-xl bg-orange-100 dark:bg-slate-700">
+                             <img src=https://mir-s3-cdn-cf.behance.net/projects/404/9c7c4e250603243.Y3JvcCwzNDI3LDI2ODEsOTc1LDA.jpg alt="White everyday sneakers"
+                            class="h-full w-full rounded-xl object-contain" loading="lazy">
+
+                                    
+                                <path
+                                    d="M25 116 C82 126 155 119 224 117 L220 130 C216 134 208 135 198 135 L42 135 C24 135 17 127 25 116Z"
+                                    fill="#F8F5EF" />
+                                <path d="M110 56 L139 87 M124 56 L151 87 M138 69 L162 94" stroke="#F97316"
+                                    stroke-width="6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="mb-2 text-sm font-bold uppercase tracking-widest text-accent">03 · Casual</p>
+                        <h3 class="mb-3 text-xl font-bold text-ink dark:text-white">Weekend Classics</h3>
+                        <p class="leading-7 text-slate-600 dark:text-slate-300">
+                            Relaxed designs that pair easily with your favorite casual outfits.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact"
+            class="reveal border-t border-slate-200 bg-white px-6 py-20 dark:border-slate-800 dark:bg-slate-900 md:py-24">
+            <div class="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
+                <div>
+                    <p class="mb-3 font-bold uppercase tracking-[0.2em] text-accent">Get in touch</p>
+                    <h2 class="mb-5 text-3xl font-black text-ink dark:text-white md:text-5xl">
+                        Let's talk shoes.
+                    </h2>
+                    <p class="max-w-lg leading-8 text-slate-600 dark:text-slate-300">
+                        Have a question about our styles or want to learn more about the
+                        collection? Send us a message using the form.
+                    </p>
+                </div>
+
+                <form action="#" class="surface-card flex flex-col gap-5">
+                    <div>
+                        <label for="name" class="mb-2 block font-semibold text-ink dark:text-white">Name</label>
+                        <input class="form-field" type="text" id="name" name="name" autocomplete="name" required>
+                    </div>
+
+                    <div>
+                        <label for="email" class="mb-2 block font-semibold text-ink dark:text-white">Email</label>
+                        <input class="form-field" type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+
+                    <div>
+                        <label for="message" class="mb-2 block font-semibold text-ink dark:text-white">Message</label>
+                        <textarea class="form-field" id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary w-full">Send Message</button>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                        Demo form for the midterm project. Messages are not sent.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ink px-6 py-8 text-center text-white">
+        <a href="#hero" class="font-black tracking-tight">YABUT<span class="text-accent">.</span> SHOES</a>
+        <p class="mt-3 text-sm text-slate-200">
+            &copy; 2026 Yabut Industry Shoes Company. Student project.
+        </p>
+    </footer>
+
+    <!-- Required scripts: GSAP, ScrollTrigger, then your own script -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
