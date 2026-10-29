@@ -1,4 +1,4 @@
-# Project Name
+# INDUSTRY-SHOES-COMPANY
 
 **Live site:** https://YOUR-USERNAME.github.io/YOUR-REPO/
 
